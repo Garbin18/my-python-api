@@ -18,3 +18,8 @@ def home():
 @app.get("/api/data")
 def get_data():
     return {"data": [1, 2, 3]}
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
