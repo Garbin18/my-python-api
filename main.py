@@ -19,6 +19,7 @@ app.add_middleware(
 def get_data():
     return {"data": [1, 2, 3]}
 
-@app.get("/health", methods=["GET", "HEAD"])
+@app.get("/health")
+@app.head("/health")
 def health_check():
     return {"status": "ok"}
