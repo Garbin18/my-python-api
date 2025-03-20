@@ -7,19 +7,18 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # 生产环境建议指定具体域名
-    allow_methods=["*"],
+    allow_methods=["HEAD","GET","POST"],
     allow_headers=["*"],
 )
 
-@app.get("/")
-def home():
-    return {"message": "Hello from Python API!"}
+# @app.get("/")
+# def home():
+#     return {"message": "Hello from Python API!"}
 
 @app.get("/api/data")
 def get_data():
     return {"data": [1, 2, 3]}
 
-@app.get("/health")
+@app.get("/health", methods=["GET", "HEAD"])
 def health_check():
     return {"status": "ok"}
-
