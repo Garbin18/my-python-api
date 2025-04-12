@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 # DEEPSEEK_API_KEY = '...'

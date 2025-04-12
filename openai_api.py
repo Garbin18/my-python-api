@@ -14,7 +14,7 @@ async def openai_stream_generator(messages: list, api_key: str) -> AsyncGenerato
     try:
         # 调用Chat Completions接口
         stream = await client.chat.completions.create(
-            model="gpt-3.5-turbo",  # 或 "gpt-4"
+            model="gpt-4o-mini",  # 或 "gpt-4"
             messages=messages,
             temperature=0.7,
             stream=True
